@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Button from "@/components/Button";
 
 const steps = [
@@ -72,16 +73,26 @@ export default function HowItWorks() {
   return (
     <div className="pt-16">
       {/* Hero */}
-      <section className="bg-light-bg">
-        <div className="max-w-[1280px] mx-auto px-6 py-20 md:py-28">
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/hero-how-it-works.jpg"
+            alt="Dental professional using digital tools"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-dark/60" />
+        </div>
+        <div className="relative max-w-[1280px] mx-auto px-6 py-24 md:py-32">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="inline-block text-primary font-semibold text-sm tracking-wide uppercase mb-4">
+            <span className="inline-block text-primary-light font-semibold text-sm tracking-wide uppercase mb-4">
               How It Works
             </span>
-            <h1 className="text-4xl md:text-5xl font-bold text-dark leading-tight tracking-tight">
+            <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight tracking-tight">
               See how Sindi replaces phone, fax and email referrals
             </h1>
-            <p className="mt-6 text-lg md:text-xl text-gray-text leading-relaxed max-w-2xl mx-auto">
+            <p className="mt-6 text-lg md:text-xl text-white/80 leading-relaxed max-w-2xl mx-auto">
               From creating an account to tracking every referral in real-time,
               here&apos;s how Sindi simplifies your entire workflow.
             </p>

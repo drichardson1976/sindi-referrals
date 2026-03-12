@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -157,17 +158,27 @@ const roles = [
 
 export default function WhoSindiIsForPage() {
   return (
-    <div className="pt-20">
+    <div className="pt-16">
       {/* Hero */}
-      <section className="bg-light-bg py-20 md:py-28">
-        <div className="max-w-[1280px] mx-auto px-6 text-center">
-          <span className="inline-block text-primary font-semibold text-sm tracking-wide uppercase mb-4">
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/hero-who-its-for.jpg"
+            alt="Dental team collaborating"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-dark/60" />
+        </div>
+        <div className="relative max-w-[1280px] mx-auto px-6 py-24 md:py-32 text-center">
+          <span className="inline-block text-primary-light font-semibold text-sm tracking-wide uppercase mb-4">
             Who Sindi Is For
           </span>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-dark leading-tight max-w-4xl mx-auto">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight max-w-4xl mx-auto">
             Built for every role in the modern dental practice
           </h1>
-          <p className="mt-6 text-lg md:text-xl text-gray-text max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-6 text-lg md:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
             Whether you&apos;re a general dentist, a specialist, or the one
             keeping the office running, Sindi is designed to make your referral
             workflow effortless.

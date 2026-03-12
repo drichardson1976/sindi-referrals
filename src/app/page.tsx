@@ -1,4 +1,5 @@
 import Button from "@/components/Button";
+import Image from "next/image";
 import Link from "next/link";
 
 const features = [
@@ -133,70 +134,34 @@ export default function Home() {
   return (
     <div className="pt-16">
       {/* ── Hero ── */}
-      <section className="bg-light-bg">
-        <div className="max-w-[1280px] mx-auto px-6 py-20 md:py-28 lg:py-32">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div className="max-w-xl">
-              <h1 className="text-4xl md:text-5xl lg:text-[3.25rem] font-bold leading-tight text-dark tracking-tight">
-                Dental referrals and messaging built for{" "}
-                <span className="text-primary">modern practices</span>
-              </h1>
-              <p className="mt-6 text-lg text-gray-text leading-relaxed">
-                Replace the phone calls, faxes, and emails with a single platform
-                that lets you send, track, and manage dental referrals digitally.
-              </p>
-              <div className="mt-8 flex flex-wrap gap-4">
-                <Button variant="primary" size="lg" href="/register">
-                  Sign Up Free
-                </Button>
-                <Button variant="outline" size="lg" href="/how-it-works">
-                  See How It Works
-                </Button>
-              </div>
-            </div>
-
-            {/* Dashboard mockup placeholder */}
-            <div className="relative">
-              <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 md:p-8">
-                <div className="flex items-center gap-2 mb-6">
-                  <div className="w-3 h-3 rounded-full bg-coral" />
-                  <div className="w-3 h-3 rounded-full bg-teal" />
-                  <div className="w-3 h-3 rounded-full bg-primary" />
-                </div>
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <div className="h-4 w-32 bg-light-bg-alt rounded" />
-                    <div className="h-8 w-24 bg-primary/10 rounded-lg" />
-                  </div>
-                  <div className="grid grid-cols-3 gap-3">
-                    <div className="bg-light-bg rounded-xl p-4">
-                      <div className="h-3 w-12 bg-primary/20 rounded mb-2" />
-                      <div className="h-6 w-8 bg-primary rounded font-bold" />
-                    </div>
-                    <div className="bg-light-bg rounded-xl p-4">
-                      <div className="h-3 w-12 bg-teal/20 rounded mb-2" />
-                      <div className="h-6 w-8 bg-teal rounded font-bold" />
-                    </div>
-                    <div className="bg-light-bg rounded-xl p-4">
-                      <div className="h-3 w-12 bg-coral/20 rounded mb-2" />
-                      <div className="h-6 w-8 bg-coral rounded font-bold" />
-                    </div>
-                  </div>
-                  {[1, 2, 3].map((i) => (
-                    <div
-                      key={i}
-                      className="flex items-center gap-4 bg-light-bg rounded-xl p-4"
-                    >
-                      <div className="w-10 h-10 rounded-full bg-primary/10 shrink-0" />
-                      <div className="flex-1 space-y-2">
-                        <div className="h-3 w-3/4 bg-light-bg-alt rounded" />
-                        <div className="h-2.5 w-1/2 bg-light-bg-alt rounded" />
-                      </div>
-                      <div className="h-6 w-16 bg-teal/15 rounded-full" />
-                    </div>
-                  ))}
-                </div>
-              </div>
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/hero-home.jpg"
+            alt="Modern dental practice"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-dark/60" />
+        </div>
+        <div className="relative max-w-[1280px] mx-auto px-6 py-24 md:py-32 lg:py-40">
+          <div className="max-w-2xl">
+            <h1 className="text-4xl md:text-5xl lg:text-[3.25rem] font-bold leading-tight text-white tracking-tight">
+              Dental referrals and messaging built for{" "}
+              <span className="text-primary-light">modern practices</span>
+            </h1>
+            <p className="mt-6 text-lg text-white/80 leading-relaxed">
+              Replace the phone calls, faxes, and emails with a single platform
+              that lets you send, track, and manage dental referrals digitally.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Button variant="primary" size="lg" href="/register">
+                Sign Up Free
+              </Button>
+              <Button variant="outline" size="lg" href="/how-it-works" className="!border-white !text-white hover:!bg-white/10">
+                See How It Works
+              </Button>
             </div>
           </div>
         </div>

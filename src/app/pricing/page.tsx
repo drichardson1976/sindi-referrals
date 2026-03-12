@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -63,15 +64,25 @@ export default function PricingPage() {
   return (
     <div className="pt-16">
       {/* Hero */}
-      <section className="bg-light-bg py-20 md:py-28">
-        <div className="max-w-[1280px] mx-auto px-6 text-center">
-          <span className="inline-block text-primary font-semibold text-sm tracking-wide uppercase mb-4">
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/hero-pricing.jpg"
+            alt="Dental office reception"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-dark/60" />
+        </div>
+        <div className="relative max-w-[1280px] mx-auto px-6 pt-24 pb-12 md:pt-32 md:pb-16 text-center">
+          <span className="inline-block text-primary-light font-semibold text-sm tracking-wide uppercase mb-4">
             Pricing
           </span>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-dark leading-tight max-w-3xl mx-auto">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight max-w-3xl mx-auto">
             Simple pricing for busy dental practices
           </h1>
-          <p className="mt-6 text-lg md:text-xl text-gray-text max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-6 text-lg md:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
             Free for general dentists. Affordable for specialists. No hidden
             fees, no surprises.
           </p>
@@ -79,7 +90,7 @@ export default function PricingPage() {
           {/* Billing Toggle */}
           <div className="mt-10 flex items-center justify-center gap-4">
             <span
-              className={`text-sm font-medium ${!annual ? "text-dark" : "text-gray-text"}`}
+              className={`text-sm font-medium ${!annual ? "text-white" : "text-white/50"}`}
             >
               Monthly
             </span>
@@ -93,7 +104,7 @@ export default function PricingPage() {
               />
             </button>
             <span
-              className={`text-sm font-medium ${annual ? "text-dark" : "text-gray-text"}`}
+              className={`text-sm font-medium ${annual ? "text-white" : "text-white/50"}`}
             >
               Annual
             </span>
